@@ -12,7 +12,7 @@ async def action(message, user_message):
 
 
 def run_discord_bot():
-    TOKEN = 'MTIwMTU0MDAyMDQ0MDQwNDA4OQ.GaXyaR.z6ja4m6C248nE6JJRNITqP3T_RhKeBzsWMAmFY'
+    TOKEN = 'TOKEN'
     client = discord.Client()
 
     @client.event
