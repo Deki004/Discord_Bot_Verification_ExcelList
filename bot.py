@@ -1,5 +1,6 @@
 import excel_file_read
 import message_handling
+import role_giving
 import discord
 
 
@@ -9,6 +10,8 @@ async def action(message, user_message):
     try:
         response = message_handling.call(user_message)
         await message.author
+    except:
+
 
 
 def run_discord_bot():
@@ -26,6 +29,13 @@ def run_discord_bot():
 
         username = str(message.author)
         user_id = int(client.user.id)
+
+        check = role_giving.check(user_id, sorted_discord_ids)
+        # noinspection PySimplifyBooleanCheck
+        if check == True:
+            role_giving.roles()
+        else:
+
 
 
 
