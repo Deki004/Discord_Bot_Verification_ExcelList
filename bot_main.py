@@ -77,6 +77,6 @@ async def setprefix(ctx, prefix):
     await ctx.send(f"The prefix has changed to: `{prefix}`")
 
 
-TOKEN = "MTIwMTU0MDAyMDQ0MDQwNDA4OQ.GdE53t.llLi9WXm-ZlFqLg9B-d0_PpBdtW4BAN_Ac2aT8"
+TOKEN = ""
 ROLEID = 1208716108807282709
 client.run(TOKEN)
