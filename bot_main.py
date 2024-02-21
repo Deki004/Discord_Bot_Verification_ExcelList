@@ -1,6 +1,7 @@
 import openpyxl
 import discord
 from discord.ext import commands
+from config import Config
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -43,9 +44,11 @@ async def on_ready():
 async def verify(ctx):
     if isinstance(ctx.author, discord.Member):
         if str(ctx.author.id) in column_values:
-            role = discord.utils.get(ctx.guild.roles, id=ROLEID)
+            role = discord.utils.get(ctx.guild.roles, id=Config.role_id_1)
+            role_2 = discord.utils.get(ctx.guild.roles, id=Config.role_id_2)
             if role is not None:
                 await ctx.author.add_roles(role)
+                await ctx.author.add_roles(role_2)
                 await ctx.send(f"{ctx.author.mention} has been verified and given the role.")
             else:
                 await ctx.send("Role not found")
@@ -77,6 +80,5 @@ async def setprefix(ctx, prefix):
     await ctx.send(f"The prefix has changed to: `{prefix}`")
 
 
-TOKEN = ""
-ROLEID = 1208716108807282709
-client.run(TOKEN)
+
+client.run(Config.token)
